@@ -9,10 +9,22 @@
 #include <iostream>
 using namespace std;
 
+void printSomething(int x, int y){
+    cout << "Hello world!\n";
+    cout << x+y;
+    cout << "\n";
+}
 
 int main(int argc, const char * argv[]) {
     
-    cout << "Hello World!\n";
+    int number = 0;
+    
+    printSomething(10, 30);
+    
+    cout << "Enter some number: ";
+    cin  >> number;
+    
+    cout << "You've just entered " + to_string(number) + " \n";
     
     return 0;
 }
