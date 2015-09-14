@@ -7,36 +7,17 @@
 //
 
 #include <iostream>
-using namespace std;
+#include <cstdlib>
+#include <ctime>
 
-class User{
-public:
-    User(string name){
-        setCodeName(name);
-    }
-    void sayHello(){
-        cout << "Hello! \n";
-    }
-    void setCodeName(string name){
-        codename = name;
-    }
-    string getCodeName(){
-        return codename;
-    }
-    
-private:
-    string codename;
-    
-};
+using namespace std;
 
 
 int main(int argc, const char * argv[]) {
     
-    User user("Bond");
-    
-    cout << user.getCodeName() << endl;
-    
-    user.sayHello();
-    
+    for (int i=0; i<=30; i++) {
+        cout << i << " - " << rand()%100 << endl;
+    }
+  
     return 0;
 }
