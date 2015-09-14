@@ -17,8 +17,17 @@ public:
     
     void sayHello(string name, string address){
         cout << "Hello! \n";
-        cout << "My name is " << name << ". I an from " << address << "\n";
+        cout << "My name is " << name << ". I am from " << address << "\n";
     }
+    void setCodeName(string name){
+        codename = name;
+    }
+    string getCodeName(){
+        return codename;
+    }
+    
+private:
+    string codename;
     
 };
 
@@ -32,6 +41,10 @@ int main(int argc, const char * argv[]) {
     userOne.address = "Helsinki, Finland";
     
     userOne.sayHello(userOne.name, userOne.address);
+    
+    userOne.setCodeName("Agent X");
+    
+    cout << userOne.getCodeName() << "\n";
     
     return 0;
 }
