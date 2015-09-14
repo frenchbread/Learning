@@ -11,13 +11,11 @@ using namespace std;
 
 class User{
 public:
-    string name;
-    int phone;
-    string address;
-    
-    void sayHello(string name, string address){
+    User(string name){
+        setCodeName(name);
+    }
+    void sayHello(){
         cout << "Hello! \n";
-        cout << "My name is " << name << ". I am from " << address << "\n";
     }
     void setCodeName(string name){
         codename = name;
@@ -34,17 +32,11 @@ private:
 
 int main(int argc, const char * argv[]) {
     
-    User userOne;
+    User user("Bond");
     
-    userOne.name = "Bob";
-    userOne.phone = 123456789;
-    userOne.address = "Helsinki, Finland";
+    cout << user.getCodeName();
     
-    userOne.sayHello(userOne.name, userOne.address);
-    
-    userOne.setCodeName("Agent X");
-    
-    cout << userOne.getCodeName() << "\n";
+    user.sayHello();
     
     return 0;
 }
