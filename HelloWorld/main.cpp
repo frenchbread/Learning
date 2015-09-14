@@ -11,8 +11,13 @@ using namespace std;
 
 class User{
 public:
-    void sayHello(){
+    string name;
+    int phone;
+    string address;
+    
+    void sayHello(string name, string address){
         cout << "Hello! \n";
+        cout << "My name is " << name << ". I an from " << address << "\n";
     }
     
 };
@@ -22,7 +27,11 @@ int main(int argc, const char * argv[]) {
     
     User userOne;
     
-    userOne.sayHello();
+    userOne.name = "Bob";
+    userOne.phone = 123456789;
+    userOne.address = "Helsinki, Finland";
+    
+    userOne.sayHello(userOne.name, userOne.address);
     
     return 0;
 }
