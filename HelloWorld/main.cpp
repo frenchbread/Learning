@@ -34,7 +34,7 @@ int main(int argc, const char * argv[]) {
     
     User user("Bond");
     
-    cout << user.getCodeName();
+    cout << user.getCodeName() << endl;
     
     user.sayHello();
     
