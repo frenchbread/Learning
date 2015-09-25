@@ -10,57 +10,70 @@
 using namespace std;
 
 
-class DayOfYear{
-public:
-    void output();
-    int month;
-    int day;
+class TimeStamp{
+    public:
+        void output();
+        void input();
+        void conversion();
+        int hours24;
+        int hours12;
+        char AMorPM;
+        int minutes60;
 };
 
 int main() {
     
-    DayOfYear today, birthday;
+    TimeStamp time;
     
-    cout << "Today's date \n";
+    char c = 'Y' ;
     
-    cout << "Enter today's month:\n";
-    cin >> today.month;
-    cout << "Enter today's day of the month:\n";
-    cin >> today.day;
+
     
-    cout << "You birthday's date \n";
-    
-    cout << "Enter month:\n";
-    cin >> birthday.month;
-    cout << "Enter day of the month:\n";
-    cin >> birthday.day;
-    
-    cout << "Today's date is : ";
-    today.output();
-    cout << "\n";
-    cout << "You birthday is : ";
-    birthday.output();
-    
+    while( c != 'N' )
+    {
+        time.input();
+        time.conversion();
+        time.output();
+        
+        cout << "Continue? Press N if you want to quit. \n";
+        cin >> c;
+    }
     
     return 0;
 }
 
-void DayOfYear::output(){
-    switch(month){
-        case 1: cout << "January "; break;
-        case 2: cout << "February "; break;
-        case 3: cout << "March "; break;
-        case 4: cout << "April "; break;
-        case 5: cout << "May "; break;
-        case 6: cout << "June "; break;
-        case 7: cout << "July "; break;
-        case 8: cout << "August "; break;
-        case 9: cout << "September "; break;
-        case 10: cout << "October "; break;
-        case 11: cout << "November "; break;
-        case 12: cout << "December "; break;
-        default: cout << "Error";
+void TimeStamp::input(){
+    
+    int hours;
+    int minutes;
+    
+    cout << "Enter hours and minutes: ";
+    cin >> hours >> minutes;
+    
+    hours24 = hours;
+    minutes60 = minutes;
+    
+
+}
+
+void TimeStamp::conversion(){
+    
+    if (hours24 > 11){
+        
+        AMorPM = 'P';
+        hours12 = hours24 - 12;
+        
+    }else{
+        AMorPM = 'A';
+        hours12 = hours24;
     }
     
-    cout << day;
+
+}
+
+void TimeStamp::output(){
+
+    cout << "Time is 12-hour time format: \n";
+    cout << hours12 << ":" << minutes60 << " " << AMorPM << ".M.\n";
+    
 }
