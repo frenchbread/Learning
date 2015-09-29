@@ -9,71 +9,43 @@
 #include <iostream>
 using namespace std;
 
+void getNumbers(int& input1, int& input2);
 
-class TimeStamp{
-    public:
-        void output();
-        void input();
-        void conversion();
-        int hours24;
-        int hours12;
-        char AMorPM;
-        int minutes60;
-};
+void swapValues(int& variable1, int& varialbe2);
+
+void showResults(int output1, int output2);
 
 int main() {
     
-    TimeStamp time;
+    int firstNum, secondNum;
     
-    char c = 'Y' ;
-    
-
-    
-    while( c != 'N' )
-    {
-        time.input();
-        time.conversion();
-        time.output();
-        
-        cout << "Continue? Press N if you want to quit. \n";
-        cin >> c;
-    }
+    getNumbers(firstNum, secondNum);
+    swapValues(firstNum, secondNum);
+    showResults(firstNum, secondNum);
     
     return 0;
 }
 
-void TimeStamp::input(){
+void getNumbers(int& input1, int& input2){
     
-    int hours;
-    int minutes;
+    cout << "Enter two integers: ";
     
-    cout << "Enter hours and minutes: ";
-    cin >> hours >> minutes;
-    
-    hours24 = hours;
-    minutes60 = minutes;
-    
-
+    cin >> input1 >> input2;
 }
 
-void TimeStamp::conversion(){
+void swapValues(int& variable1, int& variable2){
     
-    if (hours24 > 11){
-        
-        AMorPM = 'P';
-        hours12 = hours24 - 12;
-        
-    }else{
-        AMorPM = 'A';
-        hours12 = hours24;
-    }
+    int temp;
     
-
+    temp = variable1;
+    
+    variable1 = variable2;
+    variable2 = temp;
+    
 }
 
-void TimeStamp::output(){
-
-    cout << "Time is 12-hour time format: \n";
-    cout << hours12 << ":" << minutes60 << " " << AMorPM << ".M.\n";
+void showResults(int output1, int output2){
+    
+    cout << "Numbers in reverse order: " << output1 << ", " << output2 << endl;
     
 }
