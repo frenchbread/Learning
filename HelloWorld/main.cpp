@@ -9,24 +9,22 @@
 #include <iostream>
 using namespace std;
 
-struct WeatherData
+struct ShoeSize
 {
-    int temperature;
-    int windChill;
-    int windSpeed;
+    char width;
+    int number;
 };
+struct ShoeType
+{
+    char style;
+    ShoeSize size;
+    double price;
+};
+ShoeType shoe1, shoe2;
 
 int main() {
     
-    WeatherData prediction = {1};
-    
-    cout << "temp " << prediction.temperature << endl;
-
-    cout << "windChill " << prediction.windChill << endl;
-    
-    cout << "windChill " << prediction.windChill << endl;
-    
-    cout << "Ok" << endl;
+    cout << shoe1.size << endl;
     
     return 0;
 }
