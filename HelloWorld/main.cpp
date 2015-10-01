@@ -9,7 +9,7 @@
 #include <iostream>
 using namespace std;
 
-void getNumbers(int& input1, int& input2);
+void getNumbers(int &input1, int& input2);
 
 void swapValues(int& variable1, int& varialbe2);
 
