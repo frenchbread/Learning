@@ -9,43 +9,24 @@
 #include <iostream>
 using namespace std;
 
-void getNumbers(int &input1, int& input2);
-
-void swapValues(int& variable1, int& varialbe2);
-
-void showResults(int output1, int output2);
+struct WeatherData
+{
+    int temperature;
+    int windChill;
+    int windSpeed;
+};
 
 int main() {
     
-    int firstNum, secondNum;
+    WeatherData prediction = {1};
     
-    getNumbers(firstNum, secondNum);
-    swapValues(firstNum, secondNum);
-    showResults(firstNum, secondNum);
+    cout << "temp " << prediction.temperature << endl;
+
+    cout << "windChill " << prediction.windChill << endl;
+    
+    cout << "windChill " << prediction.windChill << endl;
+    
+    cout << "Ok" << endl;
     
     return 0;
-}
-
-void getNumbers(int& input1, int& input2){
-    
-    cout << "Enter two integers: ";
-    
-    cin >> input1 >> input2;
-}
-
-void swapValues(int& variable1, int& variable2){
-    
-    int temp;
-    
-    temp = variable1;
-    
-    variable1 = variable2;
-    variable2 = temp;
-    
-}
-
-void showResults(int output1, int output2){
-    
-    cout << "Numbers in reverse order: " << output1 << ", " << output2 << endl;
-    
 }
