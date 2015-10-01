@@ -24,7 +24,7 @@ ShoeType shoe1, shoe2;
 
 int main() {
     
-    cout << shoe1.size << endl;
+    cout << shoe1.style << endl;
     
     return 0;
 }
