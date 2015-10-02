@@ -9,71 +9,71 @@
 #include <iostream>
 using namespace std;
 
-
-class TimeStamp{
-    public:
-        void output();
-        void input();
-        void conversion();
-        int hours24;
-        int hours12;
-        char AMorPM;
-        int minutes60;
+class Server{
+public:
+    Server(char letterName);
+    static int getTurn();
+    void serveOne();
+    static bool stillOpen();
+    
+private:
+    static int turn;
+    static int lastServed;
+    static bool nowOpen;
+    char name;
 };
+
+int Server:: turn = 0;
+int Server:: lastServed = 0 ;
+bool Server:: nowOpen = true;
 
 int main() {
     
-    TimeStamp time;
+    Server s1('A'), s2('B');
     
-    char c = 'Y' ;
+    int number, count;
     
-
-    
-    while( c != 'N' )
-    {
-        time.input();
-        time.conversion();
-        time.output();
+    do{
+        cout << "How many in your group" << endl;
+        cin >> number;
+        cout << "Your turns are: ";
         
-        cout << "Continue? Press N if you want to quit. \n";
-        cin >> c;
-    }
+        for (count = 0; count < number; count++) {
+            cout << Server:: getTurn() << " ";
+        }
+        cout << endl;
+        
+        s1.serveOne();
+        s2.serveOne();
+        
+    }while (Server::stillOpen());
+    
+    cout << " Now closing service! " << endl;
     
     return 0;
 }
 
-void TimeStamp::input(){
+Server::Server(char letterName) : name(letterName){
     
-    int hours;
-    int minutes;
-    
-    cout << "Enter hours and minutes: ";
-    cin >> hours >> minutes;
-    
-    hours24 = hours;
-    minutes60 = minutes;
-    
-
 }
 
-void TimeStamp::conversion(){
+int Server::getTurn(){
+    turn++;
+    return turn;
+}
+
+bool Server::stillOpen(){
+    return nowOpen;
+}
+
+void Server::serveOne(){
     
-    if (hours24 > 11){
-        
-        AMorPM = 'P';
-        hours12 = hours24 - 12;
-        
-    }else{
-        AMorPM = 'A';
-        hours12 = hours24;
+    if (nowOpen && lastServed < turn) {
+        lastServed++;
+        cout << "Server " << name << " now serving " << lastServed << endl;
     }
     
-
+    if (lastServed >= turn) nowOpen = false;
 }
 
-void TimeStamp::output(){
 
-    cout << "Time is 12-hour time format: \n";
-    cout << hours12 << ":" << minutes60 << " " << AMorPM << ".M.\n";
-    
-}
