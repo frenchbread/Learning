@@ -1,0 +1,7 @@
+ var test = require('tape')
+     test('nextTick', function (t) {
+       t.plan(1)
+       process.nextTick(function () {
+         t.pass('callback called')
+       })
+     })
