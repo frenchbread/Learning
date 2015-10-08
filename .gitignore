@@ -3,3 +3,8 @@
 Python/.datamining
 HelloWorld.xcodeproj/
 Fraction.xcodeproj/
+build/
+captures/
+.gradle
+local.properties
+.iml
