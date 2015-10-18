@@ -21,7 +21,7 @@ for line in f:
 
 x=[l[:-1] for l in data]
 y=[l[-1] for l in data]
-clf = tree.DecisionTreeClassifier()
+clf = tree.DecisionTreeClassifier(max_depth=2,criterion='gini',min_samples_leaf=10)
 clf.fit(x,y)
 
 print(clf.predict(x))
