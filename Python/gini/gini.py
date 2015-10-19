@@ -14,20 +14,15 @@ def gini(list):
   fair_area = height * len(list) / 2
   return (fair_area - area) / fair_area
 
+giniBefore = gini(sample)
+giniAfter1 = gini(sample21)
+giniAfter2 = gini(sample22)
 
-def gini_coeff(x):
-    # requires all values in x to be zero or positive numbers,
-    # otherwise results are undefined
-    n = len(x)
-    s = x.sum()
-    r = np.argsort(np.argsort(-x)) # calculates zero-based ranks
-    return 1 - (2.0 * (r*x).sum() + s)/(n*s)
+totalCount = len(sample)
+sample21Len = len(sample21)
+sample22Len = len(sample22)
 
-sample = np.asarray(sample)
+giniIndex = giniBefore - giniAfter1  * sample21Len/totalCount - giniAfter2 * sample22Len/totalCount
 
-gB = gini(sample)
-gA1 = gini(sample21)
-gA2 = gini(sample22)
-
-print gB
-print gB - gA1 * 8/15 - gA2 * 7/15
+print "Gini Index: " + str(giniBefore)
+print "Information gain: " + str(giniIndex)

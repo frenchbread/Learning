@@ -1,5 +1,6 @@
 from sklearn import tree
 
+# if testing - change the path for the file
 file = '/Users/damir/Documents/Study/Data Mining/iris.txt'
 
 f = open(file)
