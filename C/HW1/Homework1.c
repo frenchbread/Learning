@@ -1,5 +1,5 @@
-#include "apue.h"
-#include "error.c"
+#include "../apue.h"
+#include "../error.c"
 #include <fcntl.h>
 
 int main(int argc, char *argv[]){

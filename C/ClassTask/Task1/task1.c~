@@ -1,6 +1,6 @@
 #include <fcntl.h>
-#include "../../error.c"
-#include "../../apue.h"
+#include "error.c"
+#include "apue.h"
 
 int main (void) {
 	
