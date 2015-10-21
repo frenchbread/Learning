@@ -1,13 +1,31 @@
-import pandas as pd
-import numpy as np
-import statsmodels.api as sm
+from sklearn import tree
 
-df_adv = pd.read_csv('mycsv.csv', index_col=0)
-X = df_adv[['ell', 'meals', 'acs_k3', 'acs_46', 'growth', 'full', 'emer', 'enroll']]
-y = df_adv['api00']
+# if testing - change the path for the file
+file = 'elemapi2.txt'
 
-## fit a OLS model with intercept on TV and Radio
-X = sm.add_constant(X)
-est = sm.OLS(y, X).fit()
+f = open(file)
+data = []
 
-est.summary()
+for line in f:
+
+    split_line=line.split()
+
+    # if split_line[-1]=='no:
+    #     new_line=[float(x) for x in split_line[:-1]]+[0]
+    # elif split_line[-1]=='yes':
+    #     new_line=[float(x) for x in split_line[:-1]]+[1]
+    # else:
+    #     new_line=[float(x) for x in split_line[:-1]]+[2]
+
+    del split_line[7]
+    del split_line[-4]
+    del split_line[-3]
+    del split_line[-2]
+
+    #new_line=[float(x) for x in split_line]
+
+    print int(split_line[0])+int(split_line[1])
+
+    #data.append(new_line)
+
+    #print new_line
