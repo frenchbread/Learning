@@ -14,13 +14,13 @@ using namespace std;
 
 class Money{
 public:
-    Money();
+    Money( );
     Money(double amount);
     Money(int theDollars, int theCents);
     Money(int theDollars);
-    double getAmount() const;
-    int getDollars() const;
-    int getCents() const;
+    double getAmount( ) const;
+    int getDollars( ) const;
+    int getCents( ) const;
     friend const Money operator +(const Money& amount1, const Money& amount2);
     friend const Money operator -(const Money& amount1, const Money& amount2);
     friend bool operator ==(const Money& amount1, const Money& amount2);
@@ -38,6 +38,7 @@ private:
 int main(int argc, const char * argv[]) {
     
     Money yourAmount, myAmount(1000, 90);
+    
     cout << "Enter an amount of money: ";
     cin >> yourAmount;
     cout << "Your amount is " << yourAmount << endl;
@@ -71,7 +72,7 @@ ostream& operator <<(ostream& outputStream, const Money& amount){
         outputStream << '$';
     outputStream << absDollars;
     
-    if (absDollars >= 1000)
+    if (absDollars >= 10)
         outputStream << '.' << absCents;
     else
         outputStream << '.' << '0' << absCents;
@@ -143,9 +144,51 @@ const Money operator -(const Money& amount){
 }
 
 
+Money::Money( ): dollars(0), cents(0) {}
 
+Money::Money(double amount): dollars(dollarsPart(amount)), cents(centsPart(amount)) {}
 
+Money::Money(int theDollars):  dollars(theDollars), cents(0) {}
 
+Money::Money(int theDollars, int theCents) {
 
+    if ((theDollars < 0 && theCents > 0) || (theDollars > 0 && theCents < 0)){
+        
+        cout << "Inconsistent money data.\n";
+        
+        exit(1);
+    }
+    
+    dollars = theDollars;
+    cents = theCents;
+}
+        
+double Money::getAmount( ) const {
+    return (dollars + cents*0.01);
+}
 
+int Money::getDollars( ) const {
+    return dollars;
+}
 
+int Money::getCents( ) const {
+    return cents;
+}
+
+int Money::dollarsPart(double amount) const {
+    return static_cast<int>(amount);
+}
+
+int Money::centsPart(double amount) const {
+    
+    double doubleCents = amount * 100;
+    int intCents = (round(fabs(doubleCents))) % 100;
+    if (amount < 0)
+        intCents = -intCents;
+    return intCents;
+    
+}
+
+int Money::round(double number) const {
+    return static_cast<int>(floor(number + 0.5));
+}
