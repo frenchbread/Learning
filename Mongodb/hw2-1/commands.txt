@@ -1,0 +1,2 @@
+Used commands:
+$ db.hw_week2.find({ : [{Wind Direction: { : 180 }} , {Wind Direction: { : 360 }} ]}, {_id:0, Station Pressure:0, Day: 0, Time: 0}).sort({Temperature: 1}).limit(1)
