@@ -9,10 +9,13 @@
 
 ### Java
 
-* Running java programs in IntelliJ IDEA.
-* Compite and run:
+* Run java programs in IntelliJ IDEA.
+  or
+* Compile and run:
 ```
 $ javac HelloWorld.java
+```
+```
 $ java HelloWorld
 ```
 
