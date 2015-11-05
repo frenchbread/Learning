@@ -8,6 +8,9 @@ public class Main {
 
         man.tellYourInfo();
 
+        BusinessMan woman = new BusinessMan("Olga", "Relex", "Technical Support");
+
+        woman.tellYourInfo();
 
     }
 }
@@ -29,8 +32,8 @@ class BusinessMan extends Man {
         this.position = position;
     }
     public void tellYourInfo(){
+        tellYourName();
         System.out.println("I work in " + company);
         System.out.println("My position is " + position);
-        tellYourName();
     }
 }
