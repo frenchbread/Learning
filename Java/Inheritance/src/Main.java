@@ -1,3 +1,5 @@
+// Inheritance of private members by indirect way
+
 public class Main {
 
     public static void main(String[] args) {
