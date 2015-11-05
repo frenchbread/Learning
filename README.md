@@ -9,8 +9,8 @@
 
 ### Java
 
-* Run java programs in IntelliJ IDEA.
-  or
+##### Run java programs:
+* In IntelliJ IDEA.
 * Compile and run:
 ```
 $ javac HelloWorld.java
