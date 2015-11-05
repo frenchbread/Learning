@@ -1,3 +1,5 @@
+// Basic structure of inheritance.
+
 public class Main {
 
     public static void main(String[] args) {
