@@ -9,7 +9,7 @@
 
 ### Java
 
-##### Run java programs:
+##### Running and compiling options:
 * In IntelliJ IDEA.
 * Compile and run:
 ```
@@ -17,5 +17,15 @@ $ javac HelloWorld.java
 ```
 ```
 $ java HelloWorld
+```
+
+### C
+
+##### Compiling:
+```
+$ gcc HelloWorld.c -o HelloWorld
+```
+```
+$ ./HelloWorld
 ```
 
