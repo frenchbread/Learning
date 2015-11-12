@@ -1,11 +1,10 @@
 #include <sys/types.h>
-#include <unistd,h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
 
 int main (void){
 	pid_t pid;
-	
 	switch(pid = fork()){
 		case -1:
 			perror("fork");
@@ -20,9 +19,9 @@ int main (void){
 			exit(0);
 		break;
 		default:
-			printf("--> Parent process - My PID:%s\n", (int)getpid());
+			printf("--> Parent process - My PID:%d\n", (int)getpid());
 		break;
-	} 
-	
+	}
+
 	return 0;
 }
