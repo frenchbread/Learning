@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>03E6B605-D8FD-4953-90A2-BC67C2642C31</string>
+	<key>IDESourceControlProjectName</key>
+	<string>contactList</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BDA92EF2183B658F2E79293F0106A678C747344B</key>
+		<string>https://github.com/frenchbread/Learning.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Cpp/contactList/contactList.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BDA92EF2183B658F2E79293F0106A678C747344B</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/frenchbread/Learning.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BDA92EF2183B658F2E79293F0106A678C747344B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BDA92EF2183B658F2E79293F0106A678C747344B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Learning</string>
+		</dict>
+	</array>
+</dict>
+</plist>
