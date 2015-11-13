@@ -29,7 +29,7 @@ int main()
         cout << "Credentials are incorrect" << endl;
     }
     
-    cout << "\n;";
+    cout << "\n";
     
     if (user2.Login() != 0){
         cout << "Login succeeded!" << endl;
@@ -37,7 +37,7 @@ int main()
         cout << "Credentials are incorrect" << endl;
     }
     
-    cout << "\n;";
+    cout << "\n";
     
     if (user3.Login() != 0){
         cout << "Login succeeded!" << endl;
@@ -45,7 +45,7 @@ int main()
         cout << "Credentials are incorrect" << endl;
     }
     
-    cout << "\n;";
+    cout << "\n";
     
     if (admin1.Login() != 0){
         cout << "Login succeeded!" << endl;
@@ -53,7 +53,7 @@ int main()
         cout << "Credentials are incorrect" << endl;
     }
     
-    cout << "\n;";
+    cout << "\n";
     
     if (admin2.Login() != 0){
         cout << "Login succeeded!" << endl;
@@ -61,7 +61,7 @@ int main()
         cout << "Credentials are incorrect" << endl;
     }
     
-    cout << "\n;";
+    cout << "\n";
     
     if (admin3.Login() != 0){
         cout << "Login succeeded!" << endl;
