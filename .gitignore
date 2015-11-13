@@ -7,3 +7,4 @@ captures/
 local.properties
 .iml
 node_modules/
+*.pbxproj
