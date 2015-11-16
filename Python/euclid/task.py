@@ -1,4 +1,6 @@
 from scipy.spatial import distance
+import numpy as np
+from sklearn.svm import SVC
 
 file = 'iris.txt'
 
@@ -19,4 +21,14 @@ n150 = data[149]
 
 dst = distance.euclidean(n1, n150)
 
-print dst
+#a = np.array(data)
+
+x=[l[0] for l in data] 
+y=[l[1] for l in data]
+z=[l[2] for l in data]
+
+clf = svm.SVC(kernel='linear')
+clf.fit(x,y)
+
+print(clf.predict(x))
+# print x
