@@ -29,3 +29,10 @@ $ gcc HelloWorld.c -o HelloWorld
 $ ./HelloWorld
 ```
 
+
+### Other
+
+##### Installing `ncurses.h` header:
+```
+$ sudo apt-get install libncurses5-dev libncursesw5-dev
+```
