@@ -1,6 +1,4 @@
-from scipy.spatial import distance
-import numpy as np
-from sklearn.svm import SVC
+from sklearn import svm
 
 file = 'wdbc_mean.txt'
 
@@ -14,6 +12,16 @@ for line in f:
 	data.append(new_line)
 f.close()
 
-print data
+x=[l[:-1] for l in data] 
+y=[l[-1] for l in data]
 
-# print x
+clf = svm.SVC(C=2, kernel='linear')
+clf.fit(x,y)
+
+# print(clf.support_) #indices of support vectors 
+# print(clf.support_vectors_) #support vectors 
+# print(clf.n_support_) #the number of support vector for each class
+# print(clf.dual_coef_) #coefficients of the support vectors
+print(clf.coef_) #weights assigned to the feature (only available for linear kernel) 
+# print(clf.intercept_) #constants in decision function
+# print(clf.score(x,y))
