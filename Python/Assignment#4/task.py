@@ -1,4 +1,5 @@
-from sklearn import svm
+from sklearn.svm import SVC
+import matplotlib.pyplot as plt
 
 file = 'two_moons.txt'
 
@@ -61,3 +62,17 @@ print(clf9.n_support_)
 print(clf10.n_support_)
 print(clf11.n_support_)
 print(clf12.n_support_)
+
+h=0.02
+
+x_min, x_max = x[:, 0].min() - 0.5, x[:, 0].max() + 0.5
+y_min, y_max = x[:, 1].min() - 0.5, x[:, 1].max() + 0.5
+
+xx,yy=np.meshgrid(np.arange(x_min,x_max,h),np.arange(y_min,y_max, h))
+z=clf1.predict(np.c_[xx.ravel(),yy.ravel()]) 
+z=z.reshape(xx.shape) 
+plt.contourf(xx,yy,z,cmap=plt.cm.Paired,alpha=0.8) 
+plt.scatter(x[:,0],x[:,1],s=100,c=y) 
+plt.xlim(x_min,x_max)
+plt.ylim(y_min,y_max)
+plt.show()
