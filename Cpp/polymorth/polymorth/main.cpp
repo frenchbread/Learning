@@ -16,7 +16,7 @@ int main() {
 
     
     Sale regularSale(10.00);
-    DiscountSale discountSale(15.00, 25);
+    DiscountSale discountSale(11.00, 25);
     
     
     cout.setf(ios::fixed);

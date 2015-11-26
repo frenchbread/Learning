@@ -9,13 +9,13 @@
 #include "sale.h"
 using namespace std;
 
-bool operator<(const Sale& first, const Sale& second) {
+bool operator < (const Sale& first, const Sale& second) {
     return ( first.bill() < second.bill() );
 }
 
 Sale :: Sale(): price(0) { }
 
-Sale :: Sale(double thePrice){
+Sale :: Sale(double thePrice) {
     
     if (thePrice >= 0)
         price = thePrice;

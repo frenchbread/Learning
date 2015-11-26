@@ -13,8 +13,6 @@
 #include <iostream>
 using namespace std;
 
-
-
 class Sale
 {
     friend bool operator < (const Sale& first, const Sale& second);
