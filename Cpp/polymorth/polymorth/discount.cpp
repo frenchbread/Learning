@@ -8,7 +8,7 @@
 
 #include "discount.h"
 
-DiscountSale :: DiscountSale() : Sale(), discount(0) { }
+DiscountSale :: DiscountSale() : Sale(), discount(0) { } // init section
 
 DiscountSale :: DiscountSale(double thePrice, double theDiscount) : Sale(thePrice), discount(theDiscount) { }
 
