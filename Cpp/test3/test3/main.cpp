@@ -18,8 +18,8 @@ public:
 
 class D : public B{
 public:
-    void f(){
-        cout << "Class A" << endl;
+    void f(int a){
+        cout << "Class A " << a <<endl;
     }
 };
 
@@ -28,8 +28,13 @@ public:
 int main(int argc, const char * argv[]) {
 
     B* b = new D;
+    D d1;
+    B b1;
     
     b->f();
+    
+    b1.f();
+    d1.f(1);
     
     return 0;
 }
