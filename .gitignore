@@ -34,3 +34,7 @@ xcuserdata
 *.moved-aside
 *.xcuserstate
 *.xcscheme
+
+## C
+*.out
+*.foo
