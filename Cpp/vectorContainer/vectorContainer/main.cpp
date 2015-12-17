@@ -14,7 +14,7 @@ int main(int argc, const char * argv[]) {
 
     vector<int> container;
     
-    for (int i = 1; i<=4; i++) {
+    for (int i = 0; i<5; i++) {
         container.push_back(i);
     }
     
@@ -23,7 +23,7 @@ int main(int argc, const char * argv[]) {
     vector<int>::iterator p;
     
     for (p = container.begin(); p!=container.end(); p++) {
-        cout << *p  << " ";
+        cout << *p << " " << container[*p]  << " ";
     }
     
     cout << endl;
