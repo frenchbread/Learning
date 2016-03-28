@@ -1,0 +1,34 @@
+VIM Commands:
+
+i -> insert before letter
+I -> insert beginning of line
+
+a -> append after letter
+A -> append after times
+
+o -> open a new line after current line
+O -> open a new line befire the current line
+
+w -> navigates the cursor to next word
+W -> navigates the cursor to the next word (not worrying about symbols)
+
+e -> navigates to the next end of word
+E -> navigates to the next end of word (no worrying about symbols)
+
+r -> replaces a simple char
+R -> replaces until we tell it to stop
+
+c -> changes wahevr we specify (using a modifier)
+C -> changes until the end of the line
+
+x -> deletes a single char at the cursor
+X -> deletes a single char before te cursor
+
+d -> deletes whatever we specify (using a modifier) (and cuts it)
+D -> deletes until the end of the line (and cuts it)
+
+y -> yanks whatever we specify (using a modifier)
+Y -> Yanks the entire current line
+
+p -> pastes from the vim buffer after the current cursor position
+P -> pasted from the vim buffer before the current cursor position
