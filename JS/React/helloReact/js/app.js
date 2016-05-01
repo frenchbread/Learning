@@ -51,13 +51,19 @@ const News = React.createClass({
     return (
       <div className="news">
         {newsTemplate}
-        <strong className={(data.length > 0) ? '' : 'none'}>{data.length} articles found.</strong>
+        <strong className={'news__count ' + (data.length > 0 ? '':'none') }>{data.length} articles found.</strong>
       </div>
     );
   }
 });
 
 const Article = React.createClass({
+  propTypes: {
+    data: React.PropTypes.shape({
+      author: React.PropTypes.string.isRequired,
+      text: React.PropTypes.string.isRequired
+    })
+  },
   render () {
     const author = this.props.data.author;
     const text = this.props.data.text;
