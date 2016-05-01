@@ -24,7 +24,6 @@ const App = React.createClass({
     return (
       <div className="app">
         <h1>The News.</h1>
-        <hr/>
         <News data={myNews}/>
       </div>
     );
@@ -64,10 +63,9 @@ const Article = React.createClass({
     const text = this.props.data.text;
 
     return (
-      <div>
+      <div className="article">
         <b className="news__author">{author}</b>
         <p className="news__text">{text}</p>
-        <hr/>
       </div>
     )
   }
