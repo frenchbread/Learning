@@ -2,66 +2,76 @@
 
 const myNews = [
   {
-    a: 'Damir',
-    b: 'Some news here'
+    author: 'Damir',
+    text: 'Some news here'
   },
   {
-    a: 'Damir',
-    b: 'Some news here 1'
+    author: 'Damir',
+    text: 'Some news here 1'
   },
   {
-    a: 'Damir',
-    b: 'Some news here 2'
+    author: 'Damir',
+    text: 'Some news here 2'
   },
   {
-    a: 'Damir',
-    b: 'Some news here 3'
+    author: 'Damir',
+    text: 'Some news here 3'
   }
 ];
-
-const News = React.createClass({
-  render () {
-
-    const data = this.props.data;
-
-    const newsTemplate = data.map((item, index) => {
-      return (
-        <div key={index}>
-          <p className="news__a">{item.a}</p>
-          <p className="news__b">{item.b}</p>
-        </div>
-      )
-    })
-
-    return (
-      <div className="news">
-        {newsTemplate}
-      </div>
-    );
-  }
-});
-
-const Comments = React.createClass({
-  render () {
-    return (
-      <div className="comments">
-        Нет новостей - комментировать нечего
-      </div>
-    );
-  }
-});
 
 const App = React.createClass({
   render () {
     return (
       <div className="app">
-        Всем привет, я компонент App! Я умею отображать новости.
+        <h1>The News.</h1>
+        <hr/>
         <News data={myNews}/>
-        <Comments />
       </div>
     );
   }
 });
+
+const News = React.createClass({
+  render () {
+    const data = this.props.data;
+
+    let newsTemplate;
+
+    if (data.length > 0) {
+      newsTemplate = data.map((item, index) => {
+        return (
+          <div key={index}>
+            <Article data={item} />
+          </div>
+        )
+      });
+    } else {
+      newsTemplate = <p>Unfortunately there are no any news.</p>
+    }
+
+    return (
+      <div className="news">
+        {newsTemplate}
+        <strong className={(data.length > 0) ? '' : 'none'}>{data.length} articles found.</strong>
+      </div>
+    );
+  }
+});
+
+const Article = React.createClass({
+  render () {
+    const author = this.props.data.author;
+    const text = this.props.data.text;
+
+    return (
+      <div>
+        <b className="news__author">{author}</b>
+        <p className="news__text">{text}</p>
+        <hr/>
+      </div>
+    )
+  }
+})
 
 ReactDOM.render(
   <App />,
