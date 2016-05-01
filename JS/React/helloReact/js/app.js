@@ -1,3 +1,5 @@
+"use strict"
+
 const myNews = [
   {
     a: 'Damir',
@@ -17,12 +19,12 @@ const myNews = [
   }
 ];
 
-var News = React.createClass({
-  render: function() {
+const News = React.createClass({
+  render () {
 
-    var data = this.props.data;
+    const data = this.props.data;
 
-    var newsTemplate = data.map(function(item, index){
+    const newsTemplate = data.map((item, index) => {
       return (
         <div key={index}>
           <p className="news__a">{item.a}</p>
@@ -39,8 +41,8 @@ var News = React.createClass({
   }
 });
 
-var Comments = React.createClass({
-  render: function() {
+const Comments = React.createClass({
+  render () {
     return (
       <div className="comments">
         Нет новостей - комментировать нечего
@@ -49,8 +51,8 @@ var Comments = React.createClass({
   }
 });
 
-var App = React.createClass({
-  render: function() {
+const App = React.createClass({
+  render () {
     return (
       <div className="app">
         Всем привет, я компонент App! Я умею отображать новости.
