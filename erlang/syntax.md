@@ -269,7 +269,7 @@ true
 <<4,8,6,5,8>>
 ```
 
-## Modules
+### Modules
 
 ```
 1> erlang:element(2, {a,b,c}).
@@ -280,4 +280,37 @@ b
 [1,2,3,4]
 4> seq(1,4).
 ** exception error: undefined shell command seq/2
+```
+
+#### Module metadata:
+```
+> useless:module_info().
+[{module,useless},
+ {exports,[{add,2},
+           {hello,0},
+           {greet_and_add_two,1},
+           {module_info,0},
+           {module_info,1}]},
+ {attributes,[{vsn,[65834353802220399808625540798125688188]}]},
+ {compile,[{options,[]},
+           {version,"7.0"},
+           {source,"/Users/damir/Dev/learning/erlang/useless.erl"}]},
+ {native,false},
+ {md5,<<49,135,60,62,246,1,106,184,207,136,193,36,99,203,
+        197,124>>}]
+```
+
+### Macros
+
+```
+-define(sub(X,Y), X-Y).
+```
+
+### Guards
+
+```
+right_age(X) when X>=16, X<=104 ->
+  true;
+right_age(_) ->
+  false.
 ```
