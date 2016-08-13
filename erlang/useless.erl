@@ -5,12 +5,11 @@
 add(A,B) ->
     A + B.
 
-%% Shows greetings.
-%% io:format/1 is the standard function used to output text.
-
 hello() ->
     io:format("Hello, World!~n").
 
+%% Shows greetings.
+%% io:format/1 is the standard function used to output text.
 greet_and_add_two(X) ->
     hello(),
     add(X,2).
