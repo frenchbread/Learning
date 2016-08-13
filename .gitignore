@@ -38,3 +38,6 @@ xcuserdata
 ## C
 *.out
 *.foo
+
+# Erlang
+*.beam
