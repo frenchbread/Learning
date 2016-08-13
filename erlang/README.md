@@ -2,9 +2,12 @@
 
 # Erlang
 
+Download from [here](https://www.erlang-solutions.com/resources/download.html)
+
 > An expression should be terminated with ". " (period with whitespace).
 
-### Basic:
+## Basic
+
 ```
 1> 2 + 15.
 17
@@ -254,3 +257,33 @@ true
 ```
 
 ### Binary comprehensions
+
+```
+1> << <<X>> || <<X>> <= <<1,2,3,4,5>>, X rem 2 == 0>>.
+<<2,4>>
+2> Pixels = <<213,45,132,64,76,32,76,0,0,234,32,15>>.
+<<213,45,132,64,76,32,76,0,0,234,32,15>>
+3> RGB = [ {R,G,B} || <<R:8,G:8,B:8>> <= Pixels ].
+[{213,45,132},{64,76,32},{76,0,0},{234,32,15}]
+4> << <<R:8, G:8, B:8>> ||  {R,G,B} <- RGB >>.
+<<213,45,132,64,76,32,76,0,0,234,32,15>>
+5> << <<Bin>> || Bin <- [<<3,7,5,4,7>>] >>.
+** exception error: bad argument
+6> << <<Bin/binary>> || Bin <- [<<3,7,5,4,7>>] >>.
+<<3,7,5,4,7>>
+7> << <<(X+1)/integer>> || <<X>> <= <<3,7,5,4,7>> >>.
+<<4,8,6,5,8>>
+```
+
+## Modules
+
+```
+1> erlang:element(2, {a,b,c}).
+b
+2> element(2, {a,b,c}).
+b
+3> lists:seq(1,4).
+[1,2,3,4]
+4> seq(1,4).
+** exception error: undefined shell command seq/2
+```
