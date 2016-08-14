@@ -1,12 +1,11 @@
 -module(cases).
--export([insert/2, beach/1]).
+-export([insert/2,beach/1]).
 
-
-inset(X,[]) ->
+insert(X,[]) ->
   [X];
 insert(X,Set) ->
   case lists:member(X,Set) of
-    true -> Set;
+    true  -> Set;
     false -> [X|Set]
   end.
 
