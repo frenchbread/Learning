@@ -3,7 +3,8 @@
 -export([
   fac/1,
   tail_fac/1,
-  len/1
+  len/1,
+  tail_len/1
 ]).
 
 %% basic fuctorial function
@@ -22,3 +23,10 @@ tail_fac(N,Acc) when N > 0 -> tail_fac(N-1, N*Acc).
 
 len([]) -> 0;
 len([_|T]) -> 1 + len(T).
+
+%% tail length of a list
+
+tail_len(L) -> tail_len(L,0).
+
+tail_len([], Acc) -> Acc;
+tail_len([_|T], Acc) -> tail_len(T, Acc+1).
