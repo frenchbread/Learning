@@ -6,7 +6,13 @@
   len/1,
   tail_len/1,
   duplicate/2,
-  tail_duplicate/2
+  tail_duplicate/2,
+  reverse/1,
+  tail_reverse/1,
+  sublist/2,
+  tail_sublist/2,
+  zip/2,
+  lenient_zip/2
 ]).
 
 %% basic fuctorial function
@@ -49,3 +55,41 @@ tail_duplicate(0,_,List) ->
   List;
 tail_duplicate(N,Term,List) when N > 0 ->
   tail_duplicate(N-1, Term, [Term|List]).
+
+%% reverse list
+
+reverse([]) -> [];
+reverse([H|T]) -> reverse(T)++[H].
+
+%% tail reverse list
+
+tail_reverse(L) -> tail_reverse(L,[]).
+
+tail_reverse([],Acc) -> Acc;
+tail_reverse([H|T],Acc) -> tail_reverse(T, [H|Acc]).
+
+%% sublist
+
+sublist(_,0) -> [];
+sublist([],0) -> [];
+sublist([H|T],N) when N > 0 -> [H|sublist(T,N-1)].
+
+%% tail sublist
+
+tail_sublist(L,N) -> tail_sublist(L,N,[]).
+
+tail_sublist(_,0,SubList) -> SubList;
+tail_sublist([],_,SubList) -> SubList;
+tail_sublist([H|T],N,SubList) when N > 0 ->
+  tail_sublist(T,N-1,[H|SubList]).
+
+%% zipping list to tuples
+
+zip([],[]) -> [];
+zip([X|Xs],[Y|Ys]) -> [{X,Y}|zip(Xs,Ys)].
+
+%% lenient zipping
+
+lenient_zip([],_) -> [];
+lenient_zip(_,[]) -> [];
+lenient_zip([X|Xs],[Y|Ys]) -> [{X,Y}|lenient_zip(Xs,Ys)].
