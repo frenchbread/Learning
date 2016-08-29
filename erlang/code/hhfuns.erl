@@ -95,6 +95,6 @@ filter2(Pred, L) ->
     case Pred(X) of
         true -> [X|Acc];
         false -> Acc
+        reverse(fold(F, [], L)).
       end
     end,
-  reverse(fold(F, [], L)).
